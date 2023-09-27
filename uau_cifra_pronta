@@ -6,7 +6,30 @@ programa
 	
 	funcao inicio()
 	{
-		descriptografar("EUDVLO",3)
+		inteiro acao
+		cadeia fraseAq
+		inteiro chaveAq
+		escreva("Olá! Você gostaria de criptografar, ou descriptografar uma frase?\nDigite 0 para criptografar\nDigite 1 para descriptografar")
+		leia(acao)
+			se(acao == 0)
+			{
+				escreva("Você selecionou criptografar!\nDigite a frase:")
+				leia(fraseAq)
+				escreva("Insira a chave")
+				leia(chaveAq)
+				limpa()
+				criptografar(fraseAq,chaveAq)
+			}
+			senao se(acao == 1)
+			{
+				escreva("Você selecionou descriptografar!\nDigite a frase:")
+				leia(fraseAq)
+				escreva("Insira a chave")
+				leia(chaveAq)
+				limpa()
+				descriptografar(fraseAq,chaveAq)
+			}
+		 
 	}//fim inicio
 
 	

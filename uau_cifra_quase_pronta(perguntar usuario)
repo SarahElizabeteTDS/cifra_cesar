@@ -1,0 +1,94 @@
+programa
+{
+	inclua biblioteca Tipos --> ti
+	inclua biblioteca Texto --> t
+	const cadeia alfabeto[26] = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}
+	
+	funcao inicio()
+	{
+		descriptografar("EUDVLO",3)
+	}//fim inicio
+
+	
+	funcao criptografar(cadeia frase, inteiro chave)
+	{
+		cadeia letra = " "
+		caracter letraCaracter = ' '
+		inteiro posicao
+		inteiro numeroLetras 
+		logico estaNoAlfabeto
+
+		numeroLetras = t.numero_caracteres(frase)
+
+		//percorrer as letras especificas
+		para(inteiro j=0; j < numeroLetras; j++)
+		{
+			estaNoAlfabeto = falso
+			
+			letraCaracter = t.obter_caracter(frase, j)
+			letra = ti.caracter_para_cadeia(letraCaracter)
+			
+			//pos letra, percorre tudo
+			para(inteiro i=0; i < 26; i++)
+			{
+				se(letra == alfabeto[i])
+				{
+					posicao = i + chave
+					posicao = posicao % 26
+					
+					escreva(alfabeto[posicao])
+
+					estaNoAlfabeto = verdadeiro
+					pare
+				}//fim se
+			}//fim para
+			se(estaNoAlfabeto == falso)
+			{
+				escreva(letra)
+			}
+		}//fim para2
+	}//fim funcao cripto
+
+
+
+	funcao descriptografar(cadeia frase, inteiro chave)
+	{
+		cadeia letra = " "
+		caracter letraCaracter = ' '
+		inteiro posicao
+		inteiro numeroLetras 
+		logico estaNoAlfabeto
+
+		numeroLetras = t.numero_caracteres(frase)
+
+		//percorrer as letras especificas
+		para(inteiro j=0; j < numeroLetras; j++)
+		{
+			estaNoAlfabeto = falso
+			
+			letraCaracter = t.obter_caracter(frase, j)
+			letra = ti.caracter_para_cadeia(letraCaracter)
+			
+			//pos letra, percorre tudo
+			para(inteiro i=0; i < 26; i++)
+			{
+				se(letra == alfabeto[i])
+				{
+					posicao = i - chave
+					se(posicao < 0)
+					{
+						posicao = posicao + 26
+					}
+					escreva(alfabeto[posicao])
+
+					estaNoAlfabeto = verdadeiro
+					pare
+				}//fim se
+			}//fim para
+			se(estaNoAlfabeto == falso)
+			{
+				escreva(letra)
+			}
+		}//fim para2
+	}//fim funcao descriptografar
+}

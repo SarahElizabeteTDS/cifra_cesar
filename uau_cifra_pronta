@@ -9,22 +9,22 @@ programa
 		inteiro acao
 		cadeia fraseAq
 		inteiro chaveAq
-		escreva("Olá! Você gostaria de criptografar, ou descriptografar uma frase?\nDigite 0 para criptografar\nDigite 1 para descriptografar")
+		escreva("Olá! Você gostaria de criptografar, ou descriptografar uma frase?\nDigite 0 para criptografar\nDigite 1 para descriptografar\n")
 		leia(acao)
 			se(acao == 0)
 			{
-				escreva("Você selecionou criptografar!\nDigite a frase:")
+				escreva("Você selecionou criptografar!\nDigite a frase:\n")
 				leia(fraseAq)
-				escreva("Insira a chave")
+				escreva("Insira a chave:\n")
 				leia(chaveAq)
 				limpa()
 				criptografar(fraseAq,chaveAq)
 			}
 			senao se(acao == 1)
 			{
-				escreva("Você selecionou descriptografar!\nDigite a frase:")
+				escreva("Você selecionou descriptografar!\nDigite a frase:\n")
 				leia(fraseAq)
-				escreva("Insira a chave")
+				escreva("Insira a chave:\n")
 				leia(chaveAq)
 				limpa()
 				descriptografar(fraseAq,chaveAq)

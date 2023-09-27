@@ -1,0 +1,42 @@
+programa
+{
+	inclua biblioteca Texto
+ --> t
+	const cadeia alfabeto[26] = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}
+	
+	funcao inicio()
+	{
+		criptografar("",3)
+	}//fim inicio
+
+	
+	funcao criptografar(cadeia texto, inteiro chave)
+	{
+		cadeia letra = ""
+		cadeia palavra 
+		inteiro posicao
+
+		escreva("Escreva uma palavra para criptografar: \n")
+		leia(palavra)
+
+		//t.obter_caracter(cad, indice)
+		
+		para(inteiro j=0; j < t.numero_caracteres(palavra); j++)
+		{
+			para(inteiro i=0; i < 26; i++)
+			{
+				se(letra == alfabeto[i])
+				{
+					escreva("A letra ",letra," está na posição ", i)
+					
+					posicao = i + chave
+					posicao = posicao % 26
+					
+					escreva("\nA letra criptografada é ", alfabeto[posicao])
+					pare
+				}//fim se
+			}//fim para
+		}//fim para2
+	}
+//fim funcao cripto
+}

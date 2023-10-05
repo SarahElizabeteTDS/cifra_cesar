@@ -142,12 +142,13 @@ programa
 		para(chave = 0; chave < 26; chave++)
 		{	
 			escreva("Chave:",chave,"\n")
+			
 			para(inteiro j=0; j < numeroLetras; j++)
 			{
-			estaNoAlfabeto = falso
+				estaNoAlfabeto = falso
 			
-			letraCaracter = t.obter_caracter(frase, j)
-			letra = ti.caracter_para_cadeia(letraCaracter)
+				letraCaracter = t.obter_caracter(frase, j)
+				letra = ti.caracter_para_cadeia(letraCaracter)
 		
 			
 				para(inteiro i=0; i < 26; i++)
@@ -159,15 +160,15 @@ programa
 						estaNoAlfabeto = verdadeiro
 						
 					}//fim se
-				}//fim para
-			 }//fim para 
+				}//fim para2
+			 }//fim para1
 	
-			se(estaNoAlfabeto == falso)
-			{
-				escreva(letra)
-			}//fim se
+		se(estaNoAlfabeto == falso)
+		{
+			escreva(letra)
+		}//fim se
 
-			escreva("\n\n")
+		escreva("\n\n")
 			
 		}//fim para chave
 	}//fim funcao sem chave

@@ -141,7 +141,7 @@ programa
 		
 		para(chave = 0; chave < 26; chave++)
 		{	
-			escreva("Chave:",chave,"\n")
+			escreva("Chave:",chave+1,"\n")
 			
 			para(inteiro j=0; j < numeroLetras; j++)
 			{
@@ -168,7 +168,7 @@ programa
 			escreva(letra)
 		}//fim se
 
-		escreva("\n\n")
+		escreva("\n")
 			
 		}//fim para chave
 	}//fim funcao sem chave

@@ -20,6 +20,7 @@ programa
 			{
 				escreva("Você selecionou criptografar!\nDigite a frase (Em letras maiúsculas!):\n")
 				leia(fraseAq)
+				limpa()
 				escreva("Insira a chave:\n")
 				leia(chaveAq)
 				limpa()
@@ -29,10 +30,18 @@ programa
 			{
 				escreva("Você selecionou descriptografar!\nDigite a frase (Em letras maiúsculas!):\n")
 				leia(fraseAq)
-				escreva("Insira a chave:\n")
+				escreva("Caso você tenha a chave da mensagem, digite-a.\nCaso não tenha, digite 0\n")
 				leia(chaveAq)
-				limpa()
-				descriptografar(fraseAq,chaveAq)
+					se(chaveAq != 0)
+					{
+						limpa()
+						descriptografar(fraseAq,chaveAq)
+					}
+					senao
+					{
+						limpa()
+						descriptografarSemChave(fraseAq,chaveAq)
+					}
 			}
 		 
 	}//fim inicio
@@ -119,4 +128,47 @@ programa
 			}
 		}//fim para2
 	}//fim funcao descriptografar
+
+	funcao descriptografarSemChave(cadeia frase, inteiro chave)
+	{
+		cadeia letra = " "
+		caracter letraCaracter = ' '
+		inteiro posicao
+		inteiro numeroLetras 
+		logico estaNoAlfabeto = falso
+
+		numeroLetras = t.numero_caracteres(frase)
+		
+		para(chave = 0; chave < 26; chave++)
+		{	
+			escreva("Chave:",chave,"\n")
+			para(inteiro j=0; j < numeroLetras; j++)
+			{
+			estaNoAlfabeto = falso
+			
+			letraCaracter = t.obter_caracter(frase, j)
+			letra = ti.caracter_para_cadeia(letraCaracter)
+		
+			
+				para(inteiro i=0; i < 26; i++)
+				{	
+					se(letra == alfabeto[i])
+					{
+						posicao = (i - chave + 26) % 26
+						escreva(alfabeto[posicao])
+						estaNoAlfabeto = verdadeiro
+						
+					}//fim se
+				}//fim para
+			 }//fim para 
+	
+			se(estaNoAlfabeto == falso)
+			{
+				escreva(letra)
+			}//fim se
+
+			escreva("\n\n")
+			
+		}//fim para chave
+	}//fim funcao sem chave
 }
